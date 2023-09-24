@@ -1,6 +1,7 @@
 # going to need random to roll the dice
 import random
 
+#get the human players name
 player_name = input("please enter your name ")
 
 player_names = [player_name, "Bob", "Karen", "Scotty"]
