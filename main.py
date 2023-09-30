@@ -21,8 +21,9 @@ def turn(player):
 
     dice_no = int(dice_no)
 
-    dice_side = input("How many sides? ")
-    dice_side = int(dice_side)
+    #dice_side = input("How many sides? ")
+    #dice_side = int(dice_side)
+    dice_side = 6
 
     result = []
     for i in range(dice_no):
@@ -36,3 +37,4 @@ def turn(player):
 #this for loop gives each player a turn
 for p in player_names:
     turn(p)
+
