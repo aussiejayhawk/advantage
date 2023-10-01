@@ -16,7 +16,7 @@ def setup_players(human, others):
 
 #print the list to test
 for n in players:
-    print(player_names[n])
+    print(names[n])
 
 #this function rolls a dice, the input determines the number of sides
 def roll(side):
@@ -25,7 +25,11 @@ def roll(side):
 
 #this function performs a player turn
 def turn(player):
-    dice_no = input("How many dice would you like to roll? ")
+
+    if player == player_name:
+      dice_no = input("How many dice would you like to roll? ")
+    else:
+      dice_no = random.randint(1,9)
 
     dice_no = int(dice_no)
 
