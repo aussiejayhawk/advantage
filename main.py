@@ -3,12 +3,20 @@ import random
 
 #get the human players name
 player_name = input("please enter your name ")
+name_list = ["Maria", "Nushi", "Wei", "Mohammed", "Yan", "John", "William", "Jose", "Ana"]
+players = {}
 
-#setup a list of player names
-player_names = [player_name, "Bob", "Karen", "Scotty"]
+#setup a dictionary of player names with scores
+def setup_players(human, others):
+    names = random.sample(others,3)
+    names.insert(0,human)
+    for i in names:
+      players[i] = []
+    print(names)
 
 #print the list to test
-print(player_names)
+for n in players:
+    print(player_names[n])
 
 #this function rolls a dice, the input determines the number of sides
 def roll(side):
@@ -34,7 +42,9 @@ def turn(player):
     print(result)
     print(this_turn_score)
 
+setup_players(player_name, name_list)
+
 #this for loop gives each player a turn
-for p in player_names:
+for p in players:
     turn(p)
 
