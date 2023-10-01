@@ -37,7 +37,7 @@ def turn(player):
     for i in range(dice_no):
         result.append(roll(dice_side))
 
-    this_turn_score = (max(result)) * ((dice_no-1)/dice_no)
+    this_turn_score = round((max(result)) * ((dice_no-1)/dice_no),1)
     print(player)
     print(result)
     print(this_turn_score)
