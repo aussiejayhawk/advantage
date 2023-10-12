@@ -3,12 +3,15 @@ import random
 
 #get the human players name
 player_name = input("please enter your name ")
+#define a list of names to pick from for the computer players
 name_list = ["Maria", "Nushi", "Wei", "Mohammed", "Yan", "John", "William", "Jose", "Ana"]
+#create an empty dictionary of players
 players = {}
 
 #setup a dictionary of player names with scores
 def setup_players(human, others):
     names = random.sample(others,3)
+    #load the player name into the dictionary
     names.insert(0,human)
     for i in names:
       players[i] = []
