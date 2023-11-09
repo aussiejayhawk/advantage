@@ -1,14 +1,14 @@
 # going to need random to roll the dice
 import random
 
-#get the human players name
+# get the human players name
 player_name = input("please enter your name ")
-#define a list of names to pick from for the computer players
+# define a list of names to pick from for the computer players
 name_list = ["Maria", "Nushi", "Wei", "Mohammed", "Yan", "John", "William", "Jose", "Ana"]
-#create an empty dictionary of players
+# create an empty dictionary of players
 players = {}
 
-#setup a dictionary of player names with scores
+# setup a dictionary of player names with scores
 def setup_players(human, others):
     names = random.sample(others,3)
     #load the player name into the dictionary
@@ -17,16 +17,16 @@ def setup_players(human, others):
       players[i] = []
     print(names)
 
-#print the list to test
+# print the list to test
 for n in players:
     print(names[n])
 
-#this function rolls a dice, the input determines the number of sides
+# this function rolls a dice, the input determines the number of sides
 def roll(side):
     this_roll = random.randint(1, side)
     return this_roll
 
-#this function performs a player turn
+# this function performs a player turn
 def turn(player):
 
     if player == player_name:
@@ -51,7 +51,7 @@ def turn(player):
 
 setup_players(player_name, name_list)
 
-#this for loop gives each player a turn
+# this for loop gives each player a turn
 for p in players:
     turn(p)
 
