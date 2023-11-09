@@ -8,50 +8,54 @@ name_list = ["Maria", "Nushi", "Wei", "Mohammed", "Yan", "John", "William", "Jos
 # create an empty dictionary of players
 players = {}
 
-# setup a dictionary of player names with scores
+# set up a dictionary of player names with scores
 def setup_players(human, others):
-    names = random.sample(others,3)
-    #load the player name into the dictionary
-    names.insert(0,human)
+    names = random.sample(others, 3)
+    # load the player name into the dictionary
+    names.insert(0, human)
     for i in names:
-      players[i] = []
+        players[i] = []
     print(names)
+
 
 # print the list to test
 for n in players:
     print(names[n])
+
 
 # this function rolls a dice, the input determines the number of sides
 def roll(side):
     this_roll = random.randint(1, side)
     return this_roll
 
+
 # this function performs a player turn
 def turn(player):
 
     if player == player_name:
-      dice_no = input("How many dice would you like to roll? ")
+        dice_no = input("How many dice would you like to roll? ")
     else:
-      dice_no = random.randint(1,9)
+        dice_no = random.randint(1, 9)
 
     dice_no = int(dice_no)
 
-    #dice_side = input("How many sides? ")
-    #dice_side = int(dice_side)
+    # dice_side = input("How many sides? ")
+    # dice_side = int(dice_side)
     dice_side = 6
 
     result = []
     for i in range(dice_no):
         result.append(roll(dice_side))
 
-    this_turn_score = round((max(result)) * ((dice_no-1)/dice_no),1)
+    this_turn_score = round((max(result)) * ((dice_no-1)/dice_no), 1)
     print(player)
     print(result)
     print(this_turn_score)
 
+
 setup_players(player_name, name_list)
+
 
 # this for loop gives each player a turn
 for p in players:
     turn(p)
-
