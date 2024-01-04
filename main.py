@@ -6,6 +6,7 @@ import csv
 player_name = input("please enter your name ")
 # define a list of names to pick from for the computer players
 name_list = []
+#load a file with a list of names
 with open(r'names.txt', 'r') as file:
 
     for line in file:
