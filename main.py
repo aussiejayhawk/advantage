@@ -1,10 +1,18 @@
 # going to need random to roll the dice
 import random
+import csv
 
 # get the human players name
 player_name = input("please enter your name ")
 # define a list of names to pick from for the computer players
-name_list = ["Maria", "Nushi", "Wei", "Mohammed", "Yan", "John", "William", "Jose", "Ana"]
+with open('names.csv', 'r') as file:
+    reader = csv.reader(file)
+    name_list = []
+    for record in reader:
+        name_list.append(record)
+
+
+# name_list = ["Maria", "Nushi", "Wei", "Mohammed", "Yan", "John", "William", "Jose", "Ana"]
 # create an empty dictionary of players
 players = {}
 
@@ -53,9 +61,9 @@ def turn(player):
     print(this_turn_score)
 
 
-setup_players(player_name, name_list)
+# setup_players(player_name, name_list)
 
-
+print(name_list)
 # this for loop gives each player a turn
 for p in players:
     turn(p)
